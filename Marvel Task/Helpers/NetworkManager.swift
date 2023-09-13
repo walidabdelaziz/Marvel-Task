@@ -27,8 +27,9 @@ class NetworkManager {
         if parameters != nil{
             print("params: \(parameters ?? Parameters())")
         }
-        print("URL: \(url)")
-        Alamofire.request(url, method: method, parameters: parameters, encoding: encoding).responseData { response in
+        let urlWithAPIKey = url + "&apikey=\(Consts.API_KEY)"
+        print("URL: \(urlWithAPIKey)")
+        Alamofire.request(urlWithAPIKey, method: method, parameters: parameters, encoding: encoding).responseData { response in
             let statusCode = response.response?.statusCode
             switch response.result {
             case .success(let data):
