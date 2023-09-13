@@ -8,6 +8,7 @@
 import Foundation
 import Alamofire
 import SwiftyJSON
+import CommonCrypto
 
 enum Result<T> {
     case success(T)
@@ -17,7 +18,14 @@ class NetworkManager {
 
     static let shared = NetworkManager()
     private init() {}
-
+    
+    func setRequestURL(url: String) -> String{
+        let timestamp = APISettings.getCurrentUnixTimestamp()
+        let privateKey = Consts.PRIVATE_KEY
+        let publicKey = Consts.PUBLIC_KEY
+        let hash = APISettings.generateMarvelAPIHash(timestamp: timestamp, privateKey: privateKey, publicKey: publicKey)
+        return url + "&apikey=\(Consts.PUBLIC_KEY)&ts=\(timestamp)&hash=\(hash)"
+    }
     func request<T: Decodable>(_ url: String,
                                method: HTTPMethod = .get,
                                parameters: Parameters? = nil,
@@ -27,9 +35,8 @@ class NetworkManager {
         if parameters != nil{
             print("params: \(parameters ?? Parameters())")
         }
-        let urlWithAPIKey = url + "&apikey=\(Consts.API_KEY)"
-        print("URL: \(urlWithAPIKey)")
-        Alamofire.request(urlWithAPIKey, method: method, parameters: parameters, encoding: encoding).responseData { response in
+        print("URL: \(setRequestURL(url: url))")
+        Alamofire.request(setRequestURL(url: url), method: method, parameters: parameters, encoding: encoding).responseData { response in
             let statusCode = response.response?.statusCode
             switch response.result {
             case .success(let data):
