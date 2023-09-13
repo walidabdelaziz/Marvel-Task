@@ -21,7 +21,7 @@ struct CharactersResults: Codable {
 struct Character: Codable {
     var id: Int?
     var name, description: String?
-    var modified: Date?
+    var modified: String?
     var thumbnail: Thumbnail?
     var resourceURI: String?
     var comics, series: Comics?

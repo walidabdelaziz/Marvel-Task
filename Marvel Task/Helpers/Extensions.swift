@@ -9,8 +9,8 @@ import Foundation
 import Kingfisher
 import UIKit
 extension UIImageView{
-     func setImage(imageStr: String, placeholder: String? = nil) {
-        let imageURL = URL(string: imageStr)
+    func setImage(with thumbnail: Thumbnail, placeholder: String? = nil) {
+        let imageURL = URL(string: "\(thumbnail.path ?? "").\(thumbnail.thumbnailExtension ?? "")")
         self.kf.setImage(with: imageURL, placeholder: placeholder != nil ? UIImage(named: placeholder!) : nil) { result in
             switch result {
             case .success(let imageResult):

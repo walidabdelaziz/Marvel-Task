@@ -16,6 +16,13 @@
 		CB6B1B1F2AB26C5D001D791F /* Consts.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6B1B1E2AB26C5D001D791F /* Consts.swift */; };
 		CB6B1B222AB26E3D001D791F /* Characters.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6B1B212AB26E3D001D791F /* Characters.swift */; };
 		CB6B1B292AB26FAD001D791F /* SplashVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6B1B282AB26FAD001D791F /* SplashVC.swift */; };
+		CB6B1B2B2AB27314001D791F /* Characters.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB6B1B2A2AB27314001D791F /* Characters.storyboard */; };
+		CB6B1B2D2AB27323001D791F /* CharactersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6B1B2C2AB27323001D791F /* CharactersVC.swift */; };
+		CB6B1B302AB27430001D791F /* CharactersTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6B1B2E2AB27430001D791F /* CharactersTVCell.swift */; };
+		CB6B1B312AB27430001D791F /* CharactersTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB6B1B2F2AB27430001D791F /* CharactersTVCell.xib */; };
+		CB6B1B332AB27630001D791F /* CharactersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6B1B322AB27630001D791F /* CharactersViewModel.swift */; };
+		CB6B1B352AB27A11001D791F /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6B1B342AB27A11001D791F /* API.swift */; };
+		CB6B1B372AB27E66001D791F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6B1B362AB27E66001D791F /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +38,13 @@
 		CB6B1B1E2AB26C5D001D791F /* Consts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Consts.swift; sourceTree = "<group>"; };
 		CB6B1B212AB26E3D001D791F /* Characters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Characters.swift; sourceTree = "<group>"; };
 		CB6B1B282AB26FAD001D791F /* SplashVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashVC.swift; sourceTree = "<group>"; };
+		CB6B1B2A2AB27314001D791F /* Characters.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Characters.storyboard; sourceTree = "<group>"; };
+		CB6B1B2C2AB27323001D791F /* CharactersVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersVC.swift; sourceTree = "<group>"; };
+		CB6B1B2E2AB27430001D791F /* CharactersTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersTVCell.swift; sourceTree = "<group>"; };
+		CB6B1B2F2AB27430001D791F /* CharactersTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharactersTVCell.xib; sourceTree = "<group>"; };
+		CB6B1B322AB27630001D791F /* CharactersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersViewModel.swift; sourceTree = "<group>"; };
+		CB6B1B342AB27A11001D791F /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		CB6B1B362AB27E66001D791F /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		EC93CD6FD3BCF0DB143FACF5 /* Pods-Marvel Task.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Marvel Task.release.xcconfig"; path = "Target Support Files/Pods-Marvel Task/Pods-Marvel Task.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -101,7 +115,9 @@
 			isa = PBXGroup;
 			children = (
 				CB6B1B1C2AB26B7A001D791F /* NetworkManager.swift */,
+				CB6B1B342AB27A11001D791F /* API.swift */,
 				CB6B1B1E2AB26C5D001D791F /* Consts.swift */,
+				CB6B1B362AB27E66001D791F /* Extensions.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -118,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				CB6B1B282AB26FAD001D791F /* SplashVC.swift */,
+				CB6B1B2C2AB27323001D791F /* CharactersVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -135,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				CB6B1B0D2AB26905001D791F /* Main.storyboard */,
+				CB6B1B2A2AB27314001D791F /* Characters.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -142,6 +160,8 @@
 		CB6B1B262AB26F4B001D791F /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				CB6B1B2E2AB27430001D791F /* CharactersTVCell.swift */,
+				CB6B1B2F2AB27430001D791F /* CharactersTVCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -149,6 +169,7 @@
 		CB6B1B272AB26F5B001D791F /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				CB6B1B322AB27630001D791F /* CharactersViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -213,9 +234,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB6B1B2B2AB27314001D791F /* Characters.storyboard in Resources */,
 				CB6B1B142AB26906001D791F /* LaunchScreen.storyboard in Resources */,
 				CB6B1B112AB26906001D791F /* Assets.xcassets in Resources */,
 				CB6B1B0F2AB26905001D791F /* Main.storyboard in Resources */,
+				CB6B1B312AB27430001D791F /* CharactersTVCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,10 +291,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB6B1B332AB27630001D791F /* CharactersViewModel.swift in Sources */,
+				CB6B1B302AB27430001D791F /* CharactersTVCell.swift in Sources */,
+				CB6B1B2D2AB27323001D791F /* CharactersVC.swift in Sources */,
 				CB6B1B1D2AB26B7A001D791F /* NetworkManager.swift in Sources */,
 				CB6B1B292AB26FAD001D791F /* SplashVC.swift in Sources */,
+				CB6B1B372AB27E66001D791F /* Extensions.swift in Sources */,
 				CB6B1B1F2AB26C5D001D791F /* Consts.swift in Sources */,
 				CB6B1B082AB26905001D791F /* AppDelegate.swift in Sources */,
+				CB6B1B352AB27A11001D791F /* API.swift in Sources */,
 				CB6B1B222AB26E3D001D791F /* Characters.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

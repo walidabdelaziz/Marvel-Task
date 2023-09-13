@@ -19,7 +19,7 @@ class SplashVC: UIViewController {
         setupUI()
     }
     func setupUI(){
-        self.timer = Timer.scheduledTimer(timeInterval: 0.3, target: self, selector: #selector(updateUI), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 0.3, target: self, selector: #selector(updateUI), userInfo: nil, repeats: true)
     }
     @objc func updateUI(){
         if count > 0 {
@@ -33,6 +33,8 @@ class SplashVC: UIViewController {
         }
     }
     @objc func showVC(){
-
+        let storyboard = UIStoryboard(name: "Characters", bundle: nil)
+        let CharactersVC = storyboard.instantiateViewController(withIdentifier: "CharactersVC")
+        navigationController?.pushViewController(CharactersVC, animated: true)
     }
 }
