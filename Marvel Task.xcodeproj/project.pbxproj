@@ -9,11 +9,11 @@
 /* Begin PBXBuildFile section */
 		7F99544F90A4073805D4389E /* Pods_Marvel_Task.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24006DF9E458771167AD36BD /* Pods_Marvel_Task.framework */; };
 		CB6B1B082AB26905001D791F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6B1B072AB26905001D791F /* AppDelegate.swift */; };
-		CB6B1B0A2AB26905001D791F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6B1B092AB26905001D791F /* SceneDelegate.swift */; };
 		CB6B1B0C2AB26905001D791F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6B1B0B2AB26905001D791F /* ViewController.swift */; };
 		CB6B1B0F2AB26905001D791F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB6B1B0D2AB26905001D791F /* Main.storyboard */; };
 		CB6B1B112AB26906001D791F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB6B1B102AB26906001D791F /* Assets.xcassets */; };
 		CB6B1B142AB26906001D791F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB6B1B122AB26906001D791F /* LaunchScreen.storyboard */; };
+		CB6B1B1D2AB26B7A001D791F /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6B1B1C2AB26B7A001D791F /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,12 +21,12 @@
 		91BE377FBDF0E8317552A9CD /* Pods-Marvel Task.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Marvel Task.debug.xcconfig"; path = "Target Support Files/Pods-Marvel Task/Pods-Marvel Task.debug.xcconfig"; sourceTree = "<group>"; };
 		CB6B1B042AB26905001D791F /* Marvel Task.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Marvel Task.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB6B1B072AB26905001D791F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CB6B1B092AB26905001D791F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		CB6B1B0B2AB26905001D791F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		CB6B1B0E2AB26905001D791F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CB6B1B102AB26906001D791F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CB6B1B132AB26906001D791F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CB6B1B152AB26906001D791F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CB6B1B1C2AB26B7A001D791F /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		EC93CD6FD3BCF0DB143FACF5 /* Pods-Marvel Task.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Marvel Task.release.xcconfig"; path = "Target Support Files/Pods-Marvel Task/Pods-Marvel Task.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -48,7 +48,6 @@
 				91BE377FBDF0E8317552A9CD /* Pods-Marvel Task.debug.xcconfig */,
 				EC93CD6FD3BCF0DB143FACF5 /* Pods-Marvel Task.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -82,7 +81,7 @@
 			isa = PBXGroup;
 			children = (
 				CB6B1B072AB26905001D791F /* AppDelegate.swift */,
-				CB6B1B092AB26905001D791F /* SceneDelegate.swift */,
+				CB6B1B1B2AB26B6C001D791F /* Helpers */,
 				CB6B1B0B2AB26905001D791F /* ViewController.swift */,
 				CB6B1B0D2AB26905001D791F /* Main.storyboard */,
 				CB6B1B102AB26906001D791F /* Assets.xcassets */,
@@ -90,6 +89,14 @@
 				CB6B1B152AB26906001D791F /* Info.plist */,
 			);
 			path = "Marvel Task";
+			sourceTree = "<group>";
+		};
+		CB6B1B1B2AB26B6C001D791F /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				CB6B1B1C2AB26B7A001D791F /* NetworkManager.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -207,9 +214,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB6B1B1D2AB26B7A001D791F /* NetworkManager.swift in Sources */,
 				CB6B1B0C2AB26905001D791F /* ViewController.swift in Sources */,
 				CB6B1B082AB26905001D791F /* AppDelegate.swift in Sources */,
-				CB6B1B0A2AB26905001D791F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
