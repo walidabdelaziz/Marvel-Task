@@ -45,7 +45,6 @@ class CharacterDetailsVC: UIViewController {
         }
         dataTV.sectionHeaderHeight =  UITableView.automaticDimension
         dataTV.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 32, right: 0)
-        dataTV.rx.setDelegate(self).disposed(by: disposeBag)
     }
     func bindViewModel(){
         // handle back action
@@ -87,26 +86,10 @@ class CharacterDetailsVC: UIViewController {
                 cell.section = item
                 return cell
             }.disposed(by: disposeBag)
-
     }
-
     func fetchData(selectedCharacter: Character){
         nameDetailsLbl.text = selectedCharacter.name
         descriptionDetailsLbl.text = selectedCharacter.description?.isEmpty == true || selectedCharacter.description == "" ? "N/A" : selectedCharacter.description
         characterImg.setImage(with: selectedCharacter.thumbnail ?? Thumbnail())
-    }
-}
-
-extension CharacterDetailsVC: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension
-    }
-
-    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension
-    }
-
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return UITableView.automaticDimension
     }
 }

@@ -41,7 +41,6 @@ struct Sections: Codable {
 struct SectionsItem: Codable {
     var resourceURI: String?
     var name: String?
-    var thumbnail: Thumbnail?
 }
 
 // MARK: - Thumbnail
