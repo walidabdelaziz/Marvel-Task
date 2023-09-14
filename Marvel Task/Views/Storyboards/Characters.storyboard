@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icn-nav-marvel" translatesAutoresizingMaskIntoConstraints="NO" id="3om-RY-LG8">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="marvelLogo" translatesAutoresizingMaskIntoConstraints="NO" id="3om-RY-LG8">
                                 <rect key="frame" x="146.66666666666666" y="59" width="100" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="OVi-tc-E5e"/>
@@ -146,7 +146,7 @@
     </scenes>
     <resources>
         <image name="backIcon" width="10" height="16"/>
-        <image name="icn-nav-marvel" width="173" height="78"/>
+        <image name="marvelLogo" width="173" height="78.666664123535156"/>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

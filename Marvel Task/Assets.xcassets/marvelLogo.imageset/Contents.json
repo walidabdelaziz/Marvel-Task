@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "icn-nav-marvel.png",
+      "filename" : "marvelLogo.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "marvelLogo@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "marvelLogo@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
