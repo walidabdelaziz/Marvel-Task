@@ -25,6 +25,7 @@
 		CB6B1B372AB27E66001D791F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6B1B362AB27E66001D791F /* Extensions.swift */; };
 		CB6B1B392AB28368001D791F /* IndicatorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6B1B382AB28368001D791F /* IndicatorManager.swift */; };
 		CB6B1B3B2AB28AF1001D791F /* ParallelogramView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6B1B3A2AB28AF1001D791F /* ParallelogramView.swift */; };
+		CB6B1B3D2AB2F47E001D791F /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = CB6B1B3C2AB2F47E001D791F /* Keys.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,7 @@
 		CB6B1B362AB27E66001D791F /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		CB6B1B382AB28368001D791F /* IndicatorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorManager.swift; sourceTree = "<group>"; };
 		CB6B1B3A2AB28AF1001D791F /* ParallelogramView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParallelogramView.swift; sourceTree = "<group>"; };
+		CB6B1B3C2AB2F47E001D791F /* Keys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Keys.plist; sourceTree = "<group>"; };
 		EC93CD6FD3BCF0DB143FACF5 /* Pods-Marvel Task.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Marvel Task.release.xcconfig"; path = "Target Support Files/Pods-Marvel Task/Pods-Marvel Task.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -111,6 +113,7 @@
 				CB6B1B102AB26906001D791F /* Assets.xcassets */,
 				CB6B1B122AB26906001D791F /* LaunchScreen.storyboard */,
 				CB6B1B152AB26906001D791F /* Info.plist */,
+				CB6B1B3C2AB2F47E001D791F /* Keys.plist */,
 			);
 			path = "Marvel Task";
 			sourceTree = "<group>";
@@ -240,6 +243,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB6B1B3D2AB2F47E001D791F /* Keys.plist in Resources */,
 				CB6B1B2B2AB27314001D791F /* Characters.storyboard in Resources */,
 				CB6B1B142AB26906001D791F /* LaunchScreen.storyboard in Resources */,
 				CB6B1B112AB26906001D791F /* Assets.xcassets in Resources */,

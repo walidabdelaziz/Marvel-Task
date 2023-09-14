@@ -19,12 +19,17 @@ class NetworkManager {
     static let shared = NetworkManager()
     private init() {}
     
-    func setRequestURL(url: String) -> String{
+    func setRequestURL(url: String) -> String {
+        guard let path = Bundle.main.path(forResource: "Keys", ofType: "plist"),
+              let config = NSDictionary(contentsOfFile: path) as? [String: Any],
+              let publicKey = config["PublicAPIKey"] as? String,
+              let privateKey = config["PrivateAPIKey"] as? String else {
+            return url
+        }
+
         let timestamp = APISettings.getCurrentUnixTimestamp()
-        let privateKey = Consts.PRIVATE_KEY
-        let publicKey = Consts.PUBLIC_KEY
         let hash = APISettings.generateMarvelAPIHash(timestamp: timestamp, privateKey: privateKey, publicKey: publicKey)
-        return url + "&apikey=\(Consts.PUBLIC_KEY)&ts=\(timestamp)&hash=\(hash)"
+        return url + "&apikey=\(publicKey)&ts=\(timestamp)&hash=\(hash)"
     }
     func request<T: Decodable>(_ url: String,
                                method: HTTPMethod = .get,
