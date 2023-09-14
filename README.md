@@ -7,6 +7,7 @@ RxSwift for reactive programming
 Alamofire for networking
 Kingfisher for image caching and downloading
 NVActivityIndicatorView for loader
+Realm for caching data to work at offline mode
 
 *Requirements
 Xcode 16 or later
