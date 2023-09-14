@@ -35,3 +35,15 @@ extension UIView{
         layer.rasterizationScale = UIScreen.main.scale
     }
 }
+extension UICollectionView{
+    func setupCollectionViewLayout(cellWidthRatio: CGFloat, cellHeight: CGFloat, minimumInteritemSpacing: CGFloat = 0, minimumLineSpacing: CGFloat = 0, scrollDirection: UICollectionView.ScrollDirection = .horizontal, contentInsets: UIEdgeInsets = .zero) {
+           
+           let layout = UICollectionViewFlowLayout()
+           layout.itemSize = CGSize(width: frame.width / cellWidthRatio, height: cellHeight)
+           layout.scrollDirection = scrollDirection
+           layout.minimumLineSpacing = minimumLineSpacing
+           layout.minimumInteritemSpacing = minimumInteritemSpacing
+           contentInset = contentInsets
+           setCollectionViewLayout(layout, animated: false)
+       }
+}

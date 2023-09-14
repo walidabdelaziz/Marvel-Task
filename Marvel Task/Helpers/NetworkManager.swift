@@ -29,7 +29,8 @@ class NetworkManager {
 
         let timestamp = APISettings.getCurrentUnixTimestamp()
         let hash = APISettings.generateMarvelAPIHash(timestamp: timestamp, privateKey: privateKey, publicKey: publicKey)
-        return url + "&apikey=\(publicKey)&ts=\(timestamp)&hash=\(hash)"
+        let separator = url.contains("?") ? "&" : "?"
+        return url + "\(separator)apikey=\(publicKey)&ts=\(timestamp)&hash=\(hash)"
     }
     func request<T: Decodable>(_ url: String,
                                method: HTTPMethod = .get,

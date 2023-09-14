@@ -21,17 +21,31 @@ class CharactersViewModel {
     let isLoading = BehaviorRelay<Bool>(value: false)
     let error = PublishSubject<Error>()
     let loadNextPageTrigger = PublishSubject<Void>()
-
+    let selectedCharacter = BehaviorRelay<Character>(value: Character())
+    lazy var combinedSections: Observable<[GenericSectionModel]> = {
+        return selectedCharacter
+            .map { character -> [GenericSectionModel] in
+                guard let comicsItems = character.comics?.items, !comicsItems.isEmpty else {
+                    return []
+                }
+                guard let seriesItems = character.series?.items, !seriesItems.isEmpty else {
+                    return []
+                }
+                var sections: [GenericSectionModel] = []
+                sections.append(GenericSectionModel(title: "Comics", items: comicsItems))
+                sections.append(GenericSectionModel(title: "Series", items: seriesItems))
+                return sections
+            }
+    }()
+    let sectionItems = BehaviorRelay<[SectionsItem]>(value: [])
 
     func getCharacters() {
         guard !isLoading.value else { return }
         isLoading.accept(true)
         NetworkManager.shared.request("\(Consts.CHARACTERS)?offset=\(currentPage)&limit=20", encoding: URLEncoding.default) { [weak self] (result: Result<CharactersModel>, statusCode) in
             guard let self = self else { return }
-
             self.serialQueue.sync {
                 self.isLoading.accept(false)
-
                 switch result {
                 case .success(let response):
                     self.currentPage += 1
@@ -47,5 +61,41 @@ class CharactersViewModel {
             .subscribe(onNext: { [weak self] in
                 self?.getCharacters()
             }).disposed(by: disposeBag)
+    }
+    func getCharacterDetails() {
+        guard !isLoading.value else { return }
+        isLoading.accept(true)
+        NetworkManager.shared.request("\(Consts.CHARACTERS)/\(selectedCharacter.value.id ?? 0)", encoding: URLEncoding.default) { [weak self] (result: Result<CharactersModel>, statusCode) in
+            guard let self = self else { return }
+            self.serialQueue.sync {
+                self.isLoading.accept(false)
+                switch result {
+                case .success(let response):
+                    if let character = response.data?.results?.first {
+                        self.selectedCharacter.accept(character)
+                    } 
+                case .failure(let error):
+                    self.error.onNext(error)
+                }
+            }
+        }
+    }
+    func getSectionImage(url: String) {
+        guard !isLoading.value else { return }
+        isLoading.accept(true)
+        NetworkManager.shared.request(url, encoding: URLEncoding.default) { [weak self] (result: Result<CharactersModel>, statusCode) in
+            guard let self = self else { return }
+            self.serialQueue.sync {
+                self.isLoading.accept(false)
+                switch result {
+                case .success(let response):
+                    if let character = response.data?.results?.first {
+                        self.selectedCharacter.accept(character)
+                    }
+                case .failure(let error):
+                    self.error.onNext(error)
+                }
+            }
+        }
     }
 }

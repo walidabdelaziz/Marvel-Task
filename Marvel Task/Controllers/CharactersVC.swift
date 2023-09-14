@@ -57,8 +57,8 @@ class CharactersVC: UIViewController {
        // handle selection in tableview
         Observable
             .zip(charactersTV.rx.itemSelected, charactersTV.rx.modelSelected(Character.self))
-            .bind { [unowned self] indexPath, model in
-                self.naviagateToDetailsScreen(model: model)
+            .bind { [unowned self] indexPath, character in
+                self.naviagateToDetailsScreen(character: character)
             }.disposed(by: disposeBag)
         
         // Load the next page when reaching the end
@@ -72,7 +72,10 @@ class CharactersVC: UIViewController {
                 }).disposed(by: disposeBag)
 
     }
-    func naviagateToDetailsScreen(model: ControlEvent<Character>.Element){
-
+    func naviagateToDetailsScreen(character: ControlEvent<Character>.Element){
+        let storyboard = UIStoryboard(name: "Characters", bundle: nil)
+        let CharacterDetailsVC = storyboard.instantiateViewController(withIdentifier: "CharacterDetailsVC") as! CharacterDetailsVC
+        CharacterDetailsVC.characterViewModel.selectedCharacter.accept(character)
+        navigationController?.pushViewController(CharacterDetailsVC, animated: true)
     }
 }

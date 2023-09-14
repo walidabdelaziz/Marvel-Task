@@ -26,6 +26,11 @@
 		CB6B1B392AB28368001D791F /* IndicatorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6B1B382AB28368001D791F /* IndicatorManager.swift */; };
 		CB6B1B3B2AB28AF1001D791F /* ParallelogramView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6B1B3A2AB28AF1001D791F /* ParallelogramView.swift */; };
 		CB6B1B3D2AB2F47E001D791F /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = CB6B1B3C2AB2F47E001D791F /* Keys.plist */; };
+		CB6B1B3F2AB2F66F001D791F /* CharacterDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6B1B3E2AB2F66F001D791F /* CharacterDetailsVC.swift */; };
+		CB6B1B4E2AB30C6F001D791F /* SectionDataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6B1B4C2AB30C6F001D791F /* SectionDataCell.swift */; };
+		CB6B1B4F2AB30C6F001D791F /* SectionDataCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB6B1B4D2AB30C6F001D791F /* SectionDataCell.xib */; };
+		CB6B1B562AB33402001D791F /* SectionsTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6B1B542AB33402001D791F /* SectionsTVCell.swift */; };
+		CB6B1B572AB33402001D791F /* SectionsTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB6B1B552AB33402001D791F /* SectionsTVCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +56,11 @@
 		CB6B1B382AB28368001D791F /* IndicatorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorManager.swift; sourceTree = "<group>"; };
 		CB6B1B3A2AB28AF1001D791F /* ParallelogramView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParallelogramView.swift; sourceTree = "<group>"; };
 		CB6B1B3C2AB2F47E001D791F /* Keys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Keys.plist; sourceTree = "<group>"; };
+		CB6B1B3E2AB2F66F001D791F /* CharacterDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailsVC.swift; sourceTree = "<group>"; };
+		CB6B1B4C2AB30C6F001D791F /* SectionDataCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionDataCell.swift; sourceTree = "<group>"; };
+		CB6B1B4D2AB30C6F001D791F /* SectionDataCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SectionDataCell.xib; sourceTree = "<group>"; };
+		CB6B1B542AB33402001D791F /* SectionsTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionsTVCell.swift; sourceTree = "<group>"; };
+		CB6B1B552AB33402001D791F /* SectionsTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SectionsTVCell.xib; sourceTree = "<group>"; };
 		EC93CD6FD3BCF0DB143FACF5 /* Pods-Marvel Task.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Marvel Task.release.xcconfig"; path = "Target Support Files/Pods-Marvel Task/Pods-Marvel Task.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -144,6 +154,7 @@
 			children = (
 				CB6B1B282AB26FAD001D791F /* SplashVC.swift */,
 				CB6B1B2C2AB27323001D791F /* CharactersVC.swift */,
+				CB6B1B3E2AB2F66F001D791F /* CharacterDetailsVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -171,6 +182,10 @@
 			children = (
 				CB6B1B2E2AB27430001D791F /* CharactersTVCell.swift */,
 				CB6B1B2F2AB27430001D791F /* CharactersTVCell.xib */,
+				CB6B1B542AB33402001D791F /* SectionsTVCell.swift */,
+				CB6B1B552AB33402001D791F /* SectionsTVCell.xib */,
+				CB6B1B4C2AB30C6F001D791F /* SectionDataCell.swift */,
+				CB6B1B4D2AB30C6F001D791F /* SectionDataCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -246,6 +261,8 @@
 				CB6B1B3D2AB2F47E001D791F /* Keys.plist in Resources */,
 				CB6B1B2B2AB27314001D791F /* Characters.storyboard in Resources */,
 				CB6B1B142AB26906001D791F /* LaunchScreen.storyboard in Resources */,
+				CB6B1B4F2AB30C6F001D791F /* SectionDataCell.xib in Resources */,
+				CB6B1B572AB33402001D791F /* SectionsTVCell.xib in Resources */,
 				CB6B1B112AB26906001D791F /* Assets.xcassets in Resources */,
 				CB6B1B0F2AB26905001D791F /* Main.storyboard in Resources */,
 				CB6B1B312AB27430001D791F /* CharactersTVCell.xib in Resources */,
@@ -302,11 +319,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB6B1B332AB27630001D791F /* CharactersViewModel.swift in Sources */,
+				CB6B1B562AB33402001D791F /* SectionsTVCell.swift in Sources */,
 				CB6B1B302AB27430001D791F /* CharactersTVCell.swift in Sources */,
+				CB6B1B4E2AB30C6F001D791F /* SectionDataCell.swift in Sources */,
 				CB6B1B2D2AB27323001D791F /* CharactersVC.swift in Sources */,
 				CB6B1B1D2AB26B7A001D791F /* NetworkManager.swift in Sources */,
 				CB6B1B292AB26FAD001D791F /* SplashVC.swift in Sources */,
 				CB6B1B372AB27E66001D791F /* Extensions.swift in Sources */,
+				CB6B1B3F2AB2F66F001D791F /* CharacterDetailsVC.swift in Sources */,
 				CB6B1B1F2AB26C5D001D791F /* Consts.swift in Sources */,
 				CB6B1B082AB26905001D791F /* AppDelegate.swift in Sources */,
 				CB6B1B3B2AB28AF1001D791F /* ParallelogramView.swift in Sources */,

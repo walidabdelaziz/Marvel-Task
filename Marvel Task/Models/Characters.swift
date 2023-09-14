@@ -6,6 +6,8 @@
 //
 
 import Foundation
+import RxDataSources
+
 struct CharactersModel: Codable {
     var code: Int?
     var data: CharactersResults?
@@ -24,38 +26,22 @@ struct Character: Codable {
     var modified: String?
     var thumbnail: Thumbnail?
     var resourceURI: String?
-    var comics, series: Comics?
-    var stories: Stories?
-    var events: Comics?
+    var comics, series, events: Sections?
 }
 
 // MARK: - Comics
-struct Comics: Codable {
+struct Sections: Codable {
     var available: Int?
     var collectionURI: String?
-    var items: [ComicsItem]?
+    var items: [SectionsItem]?
     var returned: Int?
 }
 
 // MARK: - ComicsItem
-struct ComicsItem: Codable {
+struct SectionsItem: Codable {
     var resourceURI: String?
     var name: String?
-}
-
-// MARK: - Stories
-struct Stories: Codable {
-    var available: Int?
-    var collectionURI: String?
-    var items: [StoriesItem]?
-    var returned: Int?
-}
-
-// MARK: - StoriesItem
-struct StoriesItem: Codable {
-    var resourceURI: String?
-    var name: String?
-    var type: String?
+    var thumbnail: Thumbnail?
 }
 
 // MARK: - Thumbnail
@@ -65,5 +51,17 @@ struct Thumbnail: Codable {
     enum CodingKeys: String, CodingKey {
         case path
         case thumbnailExtension = "extension"
+    }
+}
+
+struct GenericSectionModel {
+    var title: String
+    var items: [SectionsItem]
+}
+extension GenericSectionModel: SectionModelType {
+    typealias Item = SectionsItem
+    init(original: GenericSectionModel, items: [Item]) {
+        self = original
+        self.items = items
     }
 }
