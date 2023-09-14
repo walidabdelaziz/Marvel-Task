@@ -12,6 +12,7 @@ target 'Marvel Task' do
   pod 'RxSwift'
   pod 'RxCocoa'
   pod 'RealmSwift', '~> 10.14.0'
+  pod 'NVActivityIndicatorView'
 
 
 end

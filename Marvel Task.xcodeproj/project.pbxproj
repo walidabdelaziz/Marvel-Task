@@ -23,6 +23,7 @@
 		CB6B1B332AB27630001D791F /* CharactersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6B1B322AB27630001D791F /* CharactersViewModel.swift */; };
 		CB6B1B352AB27A11001D791F /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6B1B342AB27A11001D791F /* API.swift */; };
 		CB6B1B372AB27E66001D791F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6B1B362AB27E66001D791F /* Extensions.swift */; };
+		CB6B1B392AB28368001D791F /* IndicatorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6B1B382AB28368001D791F /* IndicatorManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,7 @@
 		CB6B1B322AB27630001D791F /* CharactersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersViewModel.swift; sourceTree = "<group>"; };
 		CB6B1B342AB27A11001D791F /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		CB6B1B362AB27E66001D791F /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		CB6B1B382AB28368001D791F /* IndicatorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorManager.swift; sourceTree = "<group>"; };
 		EC93CD6FD3BCF0DB143FACF5 /* Pods-Marvel Task.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Marvel Task.release.xcconfig"; path = "Target Support Files/Pods-Marvel Task/Pods-Marvel Task.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -118,6 +120,7 @@
 				CB6B1B342AB27A11001D791F /* API.swift */,
 				CB6B1B1E2AB26C5D001D791F /* Consts.swift */,
 				CB6B1B362AB27E66001D791F /* Extensions.swift */,
+				CB6B1B382AB28368001D791F /* IndicatorManager.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -300,6 +303,7 @@
 				CB6B1B1F2AB26C5D001D791F /* Consts.swift in Sources */,
 				CB6B1B082AB26905001D791F /* AppDelegate.swift in Sources */,
 				CB6B1B352AB27A11001D791F /* API.swift in Sources */,
+				CB6B1B392AB28368001D791F /* IndicatorManager.swift in Sources */,
 				CB6B1B222AB26E3D001D791F /* Characters.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

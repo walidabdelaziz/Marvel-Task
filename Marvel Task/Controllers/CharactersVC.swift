@@ -27,14 +27,20 @@ class CharactersVC: UIViewController {
     func setupTableView(){
         charactersTV.register(UINib(nibName: "CharactersTVCell", bundle: nil), forCellReuseIdentifier: "CharactersTVCell")
         charactersTV.estimatedRowHeight = UITableView.automaticDimension
+        charactersTV.rowHeight = 200
     }
     func bindViewModel(){
         charactersViewModel.characters
             .bind(to: charactersTV.rx.items(cellIdentifier: "CharactersTVCell", cellType: CharactersTVCell.self)) { row, character, cell in
                 cell.selectionStyle = .none
                 cell.character = character
-            }
-            .disposed(by: disposeBag)
+            }.disposed(by: disposeBag)
+        
+        // show loader
+        charactersViewModel.isLoading.asObservable()
+            .bind { (loading) in
+                loading ? IndicatorManager.showLoader(self.view) : IndicatorManager.hideLoader()
+            }.disposed(by: disposeBag)
         
         // show error
         charactersViewModel.error
@@ -53,8 +59,7 @@ class CharactersVC: UIViewController {
             .zip(charactersTV.rx.itemSelected, charactersTV.rx.modelSelected(Character.self))
             .bind { [unowned self] indexPath, model in
                 self.naviagateToDetailsScreen(model: model)
-            }
-            .disposed(by: disposeBag)
+            }.disposed(by: disposeBag)
         
         // Load the next page when reaching the end
         charactersTV.rx.willDisplayCell
