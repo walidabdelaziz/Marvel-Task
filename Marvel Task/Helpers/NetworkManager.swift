@@ -8,7 +8,6 @@
 import Foundation
 import Alamofire
 import SwiftyJSON
-import CommonCrypto
 
 enum Result<T> {
     case success(T)

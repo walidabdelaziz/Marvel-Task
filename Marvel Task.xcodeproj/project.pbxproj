@@ -31,6 +31,9 @@
 		CB6B1B4F2AB30C6F001D791F /* SectionDataCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB6B1B4D2AB30C6F001D791F /* SectionDataCell.xib */; };
 		CB6B1B562AB33402001D791F /* SectionsTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6B1B542AB33402001D791F /* SectionsTVCell.swift */; };
 		CB6B1B572AB33402001D791F /* SectionsTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB6B1B552AB33402001D791F /* SectionsTVCell.xib */; };
+		CBF522AE2AB35D200030E324 /* CachedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF522AD2AB35D200030E324 /* CachedModel.swift */; };
+		CBF522B02AB35D6E0030E324 /* CachingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF522AF2AB35D6E0030E324 /* CachingManager.swift */; };
+		CBF522B42AB36EBF0030E324 /* ReachabilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF522B32AB36EBF0030E324 /* ReachabilityManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +64,9 @@
 		CB6B1B4D2AB30C6F001D791F /* SectionDataCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SectionDataCell.xib; sourceTree = "<group>"; };
 		CB6B1B542AB33402001D791F /* SectionsTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionsTVCell.swift; sourceTree = "<group>"; };
 		CB6B1B552AB33402001D791F /* SectionsTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SectionsTVCell.xib; sourceTree = "<group>"; };
+		CBF522AD2AB35D200030E324 /* CachedModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachedModel.swift; sourceTree = "<group>"; };
+		CBF522AF2AB35D6E0030E324 /* CachingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachingManager.swift; sourceTree = "<group>"; };
+		CBF522B32AB36EBF0030E324 /* ReachabilityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReachabilityManager.swift; sourceTree = "<group>"; };
 		EC93CD6FD3BCF0DB143FACF5 /* Pods-Marvel Task.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Marvel Task.release.xcconfig"; path = "Target Support Files/Pods-Marvel Task/Pods-Marvel Task.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -132,11 +138,13 @@
 			isa = PBXGroup;
 			children = (
 				CB6B1B1C2AB26B7A001D791F /* NetworkManager.swift */,
+				CBF522B32AB36EBF0030E324 /* ReachabilityManager.swift */,
 				CB6B1B342AB27A11001D791F /* API.swift */,
 				CB6B1B1E2AB26C5D001D791F /* Consts.swift */,
 				CB6B1B362AB27E66001D791F /* Extensions.swift */,
 				CB6B1B382AB28368001D791F /* IndicatorManager.swift */,
 				CB6B1B3A2AB28AF1001D791F /* ParallelogramView.swift */,
+				CBF522AF2AB35D6E0030E324 /* CachingManager.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -145,6 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				CB6B1B212AB26E3D001D791F /* Characters.swift */,
+				CBF522AD2AB35D200030E324 /* CachedModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -322,7 +331,9 @@
 				CB6B1B562AB33402001D791F /* SectionsTVCell.swift in Sources */,
 				CB6B1B302AB27430001D791F /* CharactersTVCell.swift in Sources */,
 				CB6B1B4E2AB30C6F001D791F /* SectionDataCell.swift in Sources */,
+				CBF522B42AB36EBF0030E324 /* ReachabilityManager.swift in Sources */,
 				CB6B1B2D2AB27323001D791F /* CharactersVC.swift in Sources */,
+				CBF522AE2AB35D200030E324 /* CachedModel.swift in Sources */,
 				CB6B1B1D2AB26B7A001D791F /* NetworkManager.swift in Sources */,
 				CB6B1B292AB26FAD001D791F /* SplashVC.swift in Sources */,
 				CB6B1B372AB27E66001D791F /* Extensions.swift in Sources */,
@@ -331,6 +342,7 @@
 				CB6B1B082AB26905001D791F /* AppDelegate.swift in Sources */,
 				CB6B1B3B2AB28AF1001D791F /* ParallelogramView.swift in Sources */,
 				CB6B1B352AB27A11001D791F /* API.swift in Sources */,
+				CBF522B02AB35D6E0030E324 /* CachingManager.swift in Sources */,
 				CB6B1B392AB28368001D791F /* IndicatorManager.swift in Sources */,
 				CB6B1B222AB26E3D001D791F /* Characters.swift in Sources */,
 			);

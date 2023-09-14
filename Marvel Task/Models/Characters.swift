@@ -27,6 +27,7 @@ struct Character: Codable {
     var thumbnail: Thumbnail?
     var resourceURI: String?
     var comics, series, events: Sections?
+    var cachedThumbnailData: Data?
 }
 
 // MARK: - Comics

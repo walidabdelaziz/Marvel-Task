@@ -15,7 +15,7 @@ class CharactersViewModel {
 
     private let serialQueue = DispatchQueue(label: "com.Marvel-Task.serialQueue")
     let disposeBag = DisposeBag()
-    var currentPage = 1
+    var offset = 0
     let characters = BehaviorRelay<[Character]>(value: [])
     let isSuccess = BehaviorRelay<Bool>(value: false)
     let isLoading = BehaviorRelay<Bool>(value: false)
@@ -38,18 +38,29 @@ class CharactersViewModel {
             }
     }()
     let sectionItems = BehaviorRelay<[SectionsItem]>(value: [])
-
+    
+    func getCachedCharacters(){
+        characters.accept(CachingManager.getCachedCharacters())
+        isLoading.accept(false)
+        return
+    }
     func getCharacters() {
         guard !isLoading.value else { return }
         isLoading.accept(true)
-        NetworkManager.shared.request("\(Consts.CHARACTERS)?offset=\(currentPage)&limit=20", encoding: URLEncoding.default) { [weak self] (result: Result<CharactersModel>, statusCode) in
+        
+        if ReachabilityManager.shared.currentNetworkStatus() == .notReachable{
+            getCachedCharacters()
+        }
+        NetworkManager.shared.request("\(Consts.CHARACTERS)?offset=\(offset)&limit=20", encoding: URLEncoding.default) { [weak self] (result: Result<CharactersModel>, statusCode) in
             guard let self = self else { return }
             self.serialQueue.sync {
                 self.isLoading.accept(false)
                 switch result {
                 case .success(let response):
-                    self.currentPage += 1
-                    self.characters.accept((self.characters.value) + (response.data?.results ?? []))
+                    self.offset += 20
+                    let allCharacters = (self.characters.value) + (response.data?.results ?? [])
+                    self.characters.accept(allCharacters)
+                    CachingManager.cacheCharactersData(characters: allCharacters)
                 case .failure(let error):
                     self.error.onNext(error)
                 }

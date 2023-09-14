@@ -50,9 +50,6 @@ class CharactersVC: UIViewController {
                 alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
                 self?.present(alert, animated: true, completion: nil)
             }).disposed(by: disposeBag)
-        
-        // handle next page trigger
-        charactersViewModel.bindLoadNextPageTrigger()
             
        // handle selection in tableview
         Observable
@@ -61,16 +58,20 @@ class CharactersVC: UIViewController {
                 self.naviagateToDetailsScreen(character: character)
             }.disposed(by: disposeBag)
         
-        // Load the next page when reaching the end
-        charactersTV.rx.willDisplayCell
+        if ReachabilityManager.shared.currentNetworkStatus() != .notReachable{
+            // handle next page trigger
+            charactersViewModel.bindLoadNextPageTrigger()
+
+            // Load the next page when reaching the end
+            charactersTV.rx.willDisplayCell
                 .subscribe(onNext: { [weak self] cell, indexPath in
                     guard let self = self else { return }
-                    let lastElement = self.charactersViewModel.characters.value.count - 3
+                    let lastElement = self.charactersViewModel.characters.value.count - 4
                     if indexPath.row == lastElement {
                         self.charactersViewModel.loadNextPageTrigger.onNext(())
                     }
                 }).disposed(by: disposeBag)
-
+        }
     }
     func naviagateToDetailsScreen(character: ControlEvent<Character>.Element){
         let storyboard = UIStoryboard(name: "Characters", bundle: nil)

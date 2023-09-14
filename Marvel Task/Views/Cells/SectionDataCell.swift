@@ -38,7 +38,7 @@ class SectionDataCell: UICollectionViewCell {
         characterViewModel.selectedCharacter.asObservable()
             .bind(onNext: {[weak self] (item) in
                 guard let self = self else{return}
-                self.img.setImage(with: item.thumbnail ?? Thumbnail())
+                self.img.setImage(with: item)
         }).disposed(by: disposeBag)
     }
 }

@@ -46,7 +46,7 @@ class CharacterDetailsVC: UIViewController {
         dataTV.sectionHeaderHeight =  UITableView.automaticDimension
         dataTV.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 32, right: 0)
     }
-    func bindViewModel(){
+    func bindViewModel(){        
         // handle back action
         backBtn.rx.tap
             .bind(onNext: {[weak self] in
@@ -78,7 +78,7 @@ class CharacterDetailsVC: UIViewController {
         
         // Bind the combinedSections property to the collection view
         
-        self.characterViewModel.combinedSections.asObservable()
+        characterViewModel.combinedSections.asObservable()
             .bind(to: dataTV.rx.items) {
                 (tableView, row, item) -> UITableViewCell in
                 let cell = tableView.dequeueReusableCell(withIdentifier: "SectionsTVCell", for: IndexPath(row: row, section: 0)) as! SectionsTVCell
@@ -90,6 +90,6 @@ class CharacterDetailsVC: UIViewController {
     func fetchData(selectedCharacter: Character){
         nameDetailsLbl.text = selectedCharacter.name
         descriptionDetailsLbl.text = selectedCharacter.description?.isEmpty == true || selectedCharacter.description == "" ? "N/A" : selectedCharacter.description
-        characterImg.setImage(with: selectedCharacter.thumbnail ?? Thumbnail())
+        characterImg.setImage(with: selectedCharacter)
     }
 }

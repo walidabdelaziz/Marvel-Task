@@ -17,7 +17,7 @@ class CharactersTVCell: UITableViewCell {
         didSet {
             guard let character = character else { return }
             titleLbl.text = character.name
-            characterImg.setImage(with: character.thumbnail ?? Thumbnail())
+            characterImg.setImage(with: character)
         }
     }
     

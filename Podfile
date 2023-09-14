@@ -15,6 +15,7 @@ target 'Marvel Task' do
   pod 'RxDataSources'
   pod 'RealmSwift', '~> 10.14.0'
   pod 'NVActivityIndicatorView'
+  pod 'ReachabilitySwift'
 
 
 end
