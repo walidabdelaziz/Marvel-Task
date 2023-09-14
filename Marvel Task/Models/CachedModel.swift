@@ -15,7 +15,6 @@ class CachedItems: Object, Codable {
     }
     @objc dynamic var id = 0
     @objc dynamic var name: String?
-    @objc dynamic var thumbnail: String?
     @objc dynamic var thumbnailData: Data?
     @objc dynamic var descriptionField: String?
 }

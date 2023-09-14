@@ -59,12 +59,6 @@ class CachingManager {
             character.id = cachedCharacter.id
             character.name = cachedCharacter.name
             character.description = cachedCharacter.descriptionField
-
-            // Parse the thumbnail URL from the cached data
-            let thumbnailParts = cachedCharacter.thumbnail?.split(separator: ".")
-            if thumbnailParts?.count == 2 {
-                character.thumbnail = Thumbnail(path: String(thumbnailParts?[0] ?? ""), thumbnailExtension: String(thumbnailParts?[1] ?? ""))
-            }
             // Load the cached image using Kingfisher
             character.cachedThumbnailData = cachedCharacter.thumbnailData
             characters.append(character)
