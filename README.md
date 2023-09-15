@@ -11,8 +11,8 @@ This project is a simple example of how to fetch marvel characters and display t
 
 ## Requirements
 
-iOS 16 or later
-Swift 5 or later
+- iOS 16 or later
+- Swift 5 or later
 
 ## Installation
 
