@@ -22,7 +22,6 @@ extension UIImageView {
                 }
             } else {
                 let processor = DownsamplingImageProcessor(size: bounds.size)
-                                 |> RoundCornerImageProcessor(cornerRadius: 20)
                 kf.indicatorType = .activity
                 kf.setImage(with: imageURL,  placeholder: placeholder != nil ? UIImage(named: placeholder!) : nil, options: [
                     .processor(processor),
