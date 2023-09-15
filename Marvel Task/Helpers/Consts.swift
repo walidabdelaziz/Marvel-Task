@@ -8,7 +8,7 @@
 import Foundation
 class Consts{
     // Mark:- Realm
-    static var REALM_VERSION = 5
+    static var REALM_VERSION = 6
     // Mark:- Base URL
     static var BASE_URL = "https://gateway.marvel.com:443/v1/public/"
     // MARK:- Characters

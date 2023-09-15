@@ -73,6 +73,7 @@ class CharactersViewModel {
                 self?.getCharacters()
             }).disposed(by: disposeBag)
     }
+    
     func getCharacterDetails() {
         guard !isLoading.value else { return }
         isLoading.accept(true)

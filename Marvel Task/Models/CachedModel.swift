@@ -8,8 +8,7 @@
 import Foundation
 import RealmSwift
 
-class CachedItems: Object, Codable {
-    
+class CachedItems: Object{
     override static func primaryKey() -> String? {
         return "id"
     }
@@ -17,4 +16,10 @@ class CachedItems: Object, Codable {
     @objc dynamic var name: String?
     @objc dynamic var thumbnailData: Data?
     @objc dynamic var descriptionField: String?
+    var comics = List<CachedSections>()
+    var series = List<CachedSections>()
+}
+class CachedSections: Object {
+    @objc dynamic var resourceURI: String = ""
+    @objc dynamic var name: String = ""
 }
